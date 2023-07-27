@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="basic_gray">#FFBBBBBB</color>
+    <color name="basic_white">#FFFFFFFF</color>
+    <color name="color_gray_button_disable">#D8DFE3</color>
+    <color name="color_gray_text_disable">#66818D</color>
+    <color name="color_hint">#bbbbbb</color>
+    <color name="color_outline_login">#D8DFE3</color>
+    <color name="color_text_black_subtitle">#263238</color>
+    <color name="color_text_login">#1D262A</color>
+    <color name="color_txt_login">#566D77</color>
+    <color name="color_txt_red">#DD0000</color>
+    <color name="disabled_button">#D8DFE3</color>
+    <color name="login_purple">#622366</color>
+    <string name="continue_txt">Continuar</string>
+    <string name="forget_pass"><u>¿Olvidaste tu contraseña?</u></string>
+    <string name="message_create_account">Creaste una cuenta Mobility ADO que también es valida en:</string>
+    <string name="text_back">REGRESAR</string>
+    <string name="text_happy">¡Felicidades!</string>
+    <string name="title_hint_enter_password">Ingresa contraseña</string>
+    <string name="title_password">Contraseña</string>
+    <string name="txt_existing_user">Usuario con registro existente</string>
+    <string name="txt_existing_user2">Parece que ya eres usuario de Mobility ADO. Ingresa tu contraseña para iniciar sesión</string>
+    <string name="txt_login_error">Error al iniciar sesión.</string>
+    <string name="txt_pass_error">Parece que la contraseña o el usuario es incorrecto.</string>
+    <string name="txt_pass_error_frag">Contraseña incorrecta. Intenta de nuevo; si el problema continua, puedes restablecerla con la opción ¿OLVIDASTE LA CONTRASEÑA?.</string>
+    <string name="txt_pass_error_max">Te invitamos a restablecer la contraseña para continuar.</string>
+    <string name="txt_pass_ok">Distingue mayúsculas y minúsculas</string>
+    <string name="txt_server_error">Hubo un error con el servidor. Inténtelo nuevamente.</string>
+    <string name="txt_validationpass1">No admite caracteres especiales</string>
+    <string name="txt_validationpass2">máximo 25 caracteres para tu contraseña</string>
+    <string name="write_pass_login">Escribe tu contraseña</string>
+    <style name="EditText.Empty" parent="FormEditTextStyleModule"/>
+    <style name="EditText.Fill" parent="FormEditTextStyleModule">
+        <item name="fontFamily">@font/gotham_pro_medium</item>
+    </style>
+    <style name="FormEditTextStyleModule">
+        <item name="android:textSize">16dp</item>
+        <item name="fontFamily">@font/gotham_pro_regular</item>
+        <item name="android:textColor">@color/color_text_black_subtitle</item>
+        <item name="android:textColorHint">@color/color_hint</item>
+    </style>
+</resources>

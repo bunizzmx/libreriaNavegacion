@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+apply plugin: 'dagger.hilt.android.plugin'
+apply from: rootProject.file("buildSystem/androidLibrary.gradle")
+def androidBase = ext.androidBase
+android {
+    namespace 'com.example.xx'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.xx"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+}
+
+dependencies {
+    implementation project (path:':libraryNavigation', configuration: 'default')
+    implementation androidBase.androidxCore
+    implementation androidBase.androidxAppCompat
+    implementation materialBase.androidMaterial
+    implementation project(path: ':libraryNavigation')
+    testImplementation testLibrarys.junitTest
+    androidTestImplementation testLibrarys.androidTestImplementation
+    androidTestImplementation testLibrarys.androidTestespresso
+    testImplementation testLibrarys.mockk
+    testImplementation testLibrarys.archCore
+    testImplementation testLibrarys.kotlinxCoroutines
+
+    implementation androidBase.androidxConstraintLayout
+    implementation androidBase.androidxNavigation
+    implementation androidOptional.androidxSwipeRefresh
+
+    //Hilt
+    implementation androidOptional.googleHilt
+    kapt kaptLibrarys.hiltKapt
+    implementation androidOptional.navigationHilt
+}

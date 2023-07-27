@@ -1,0 +1,47 @@
+apply from: "$rootProject.projectDir/buildSystem/library-version.gradle"
+
+ext {
+    androidBase = [
+            androidxCore                : "androidx.core:core-ktx:$versions.androidxCore",
+            androidxAppCompat           : "androidx.appcompat:appcompat:$versions.androidxAppCompat",
+            androidxConstraintLayout    : "androidx.constraintlayout:constraintlayout:$versions.androidConstraintLayout",
+            androidxNavigation          : "androidx.navigation:navigation-ui-ktx:$versions.androidxNavigation",
+            fragmentKtx                 : "androidx.fragment:fragment-ktx:$versions.fragmentKtx",
+            androidxNavigationFragment  : "androidx.navigation:navigation-fragment-ktx:$versions.androidxNavigationFragment",
+            androidxNavigationDynamic   : "androidx.navigation:navigation-dynamic-features-fragment:$versions.androidxNavigationDynamic"
+    ]
+
+    androidOptional = [
+            androidxSwipeRefresh        : "androidx.swiperefreshlayout:swiperefreshlayout:$versions.androidSwipeRefresh",
+            googleHilt                  : "com.google.dagger:hilt-android:$versions.hiltKapt",
+            navigationHilt              : "androidx.hilt:hilt-navigation-fragment:$versions.hiltNavigation",
+            gsonCode                    : "com.google.code.gson:gson:$versions.gsonCode",
+            retrofit                    : "com.squareup.retrofit2:retrofit:$versions.retrofit",
+            retrofitConverter           : "com.squareup.retrofit2:converter-gson:$versions.retrofitConverter",
+            kotlinxCoroutines           : "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:$versions.kotlinxCoroutinesJvm",
+            glide                       : "com.github.bumptech.glide:glide:$versions.glide",
+            glideOkHttp                 : "com.github.bumptech.glide:okhttp3-integration:$versions.glideOkHttp",
+            lifecycleLibraryCore        : "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycleLibraryCore",
+            coroutineRetrofit           : "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$versions.coroutineRetrofit"
+    ]
+
+    materialBase = [
+            androidMaterial             : "com.google.android.material:material:$versions.androidMaterial"
+    ]
+
+    testLibrarys = [
+            junitTest                   : "junit:junit:$versions.testJunit",
+            androidTestImplementation   : "androidx.test.ext:junit:$versions.androidTestJunit",
+            androidTestespresso         : "androidx.test.espresso:espresso-core:$versions.androidTestEspresso",
+            mockk                       : "io.mockk:mockk:$versions.mockk",
+            archCore                    : "androidx.arch.core:core-testing:$versions.archCore",
+            kotlinxCoroutines           : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.kotlinxCoroutines"
+    ]
+
+    kaptLibrarys = [
+            databindingKapt             : "com.android.databinding:compiler:$versions.databindingKapt",
+            hiltKapt                    : "com.google.dagger:hilt-compiler:$versions.hiltKapt"
+    ]
+
+
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="login_purple">#622366</color>
+    <color name="color_text_login">#1D262A</color>
+    <color name="color_text_black_subtitle">#263238</color>
+    <color name="basic_gray">#FFBBBBBB</color>
+    <color name="basic_white">#FFFFFFFF</color>
+    <color name="color_txt_login">#566D77</color>
+    <color name="color_gray_text_disable">#66818D</color>
+
+    <color name="color_hint">#bbbbbb</color>
+    <color name="color_outline_login">#D8DFE3</color>
+    <color name="color_gray_button_disable">#D8DFE3</color>
+
+    <color name="color_txt_red">#DD0000</color>
+
+    <color name="disabled_button">#D8DFE3</color>
+
+    <color name="colorPrimary">@color/basic_white</color>
+
+</resources>

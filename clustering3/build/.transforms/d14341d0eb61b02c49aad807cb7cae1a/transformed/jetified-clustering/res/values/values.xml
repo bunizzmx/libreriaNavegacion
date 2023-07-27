@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cluster_background">#E64A3C</color>
+    <color name="cluster_stroke">#FFFFFF</color>
+    <color name="cluster_text">#FFFFFF</color>
+    <dimen name="cluster_icon_min_size">32dp</dimen>
+    <dimen name="cluster_icon_padding">8dp</dimen>
+    <dimen name="cluster_stroke_width">1dp</dimen>
+    <dimen name="cluster_text_size">14sp</dimen>
+</resources>

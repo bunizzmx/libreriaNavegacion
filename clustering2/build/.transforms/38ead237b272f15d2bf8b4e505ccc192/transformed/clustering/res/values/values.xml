@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="basic_gray">#FFBBBBBB</color>
+    <color name="basic_white">#FFFFFFFF</color>
+    <color name="color_gray_button_disable">#D8DFE3</color>
+    <color name="color_gray_text_disable">#66818D</color>
+    <color name="color_hint">#bbbbbb</color>
+    <color name="color_outline_login">#D8DFE3</color>
+    <color name="color_text_black_subtitle">#263238</color>
+    <color name="color_text_login">#1D262A</color>
+    <color name="color_txt_login">#566D77</color>
+    <color name="disabled_button">#D8DFE3</color>
+    <color name="login_purple">#622366</color>
+    <string name="RegisterWords">Regístrate</string>
+    <string name="continue_txt">Continuar</string>
+    <string name="text_back">REGRESAR</string>
+    <string name="text_email_login">Correo electrónico</string>
+    <string name="text_login_first_register">¿Primera vez en Mobility ADO? Regístrate</string>
+    <string name="text_login_title">Inicia sesión con tu correo</string>
+    <string name="text_subtitle_in_email">Ingresa tu correo</string>
+    <string name="txt_noEnternet_error">No cuentas con conexión a internet.</string>
+    <string name="txt_validationEmail">Ingresa un correo válido</string>
+    <style name="EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/color_text_login</item>
+        <item name="android:background">@drawable/selector_edittext</item>
+        <item name="android:padding">7dp</item>
+    </style>
+    <style name="EditText.Empty" parent="FormEditTextStyleModule"/>
+    <style name="EditText.Fill" parent="FormEditTextStyleModule">
+        <item name="fontFamily">@font/gotham_pro_medium</item>
+    </style>
+    <style name="FormEditTextStyleModule">
+        <item name="android:textSize">16dp</item>
+        <item name="fontFamily">@font/gotham_pro_regular</item>
+        <item name="android:textColor">@color/color_text_black_subtitle</item>
+        <item name="android:textColorHint">@color/color_hint</item>
+    </style>
+</resources>

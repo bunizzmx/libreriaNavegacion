@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="write_pass_login">Escribe tu contraseña</string>
+    <string name="title_password" >Contraseña</string>
+    <string name="txt_validationpass1">No admite caracteres especiales</string>
+    <string name="txt_validationpass2">máximo 25 caracteres para tu contraseña</string>
+    <string name="title_hint_enter_password">Ingresa contraseña</string>
+    <string name="txt_pass_ok">Distingue mayúsculas y minúsculas</string>
+    <string name="continue_txt">Continuar</string>
+    <string name="forget_pass"><u>¿Olvidaste tu contraseña?</u></string>
+
+    <string name="txt_existing_user">Usuario con registro existente</string>
+    <string name="txt_existing_user2">Parece que ya eres usuario de Mobility ADO. Ingresa tu contraseña para iniciar sesión</string>
+
+    <string name="txt_pass_error_frag">Contraseña incorrecta. Intenta de nuevo; si el problema continua, puedes restablecerla con la opción ¿OLVIDASTE LA CONTRASEÑA?.</string>
+    <string name="txt_pass_error">Parece que la contraseña o el usuario es incorrecto.</string>
+    <string name="txt_server_error">Hubo un error con el servidor. Inténtelo nuevamente.</string>
+    <string name="txt_pass_error_max">Te invitamos a restablecer la contraseña para continuar.</string>
+    <string name="txt_login_error">Error al iniciar sesión.</string>
+    <string name="message_create_account">Creaste una cuenta Mobility ADO que también es valida en:</string>
+    <string name="text_happy">¡Felicidades!</string>
+
+
+    <string name="text_login_title">Inicia sesión con tu correo</string>
+    <string name="txt_validationEmail">Ingresa un correo válido</string>
+    <string name="text_subtitle_in_email">Ingresa tu correo</string>
+    <string name="text_email_login">Correo electrónico</string>
+    <string name="text_login_first_register">¿Primera vez en Mobility ADO? Regístrate</string>
+
+    <string name="text_back">REGRESAR</string>
+    <string name="txt_noEnternet_error">No cuentas con conexión a internet.</string>
+
+    <string name="RegisterWords">Regístrate</string>
+
+    <string name="title_welcome_login_module" translatable="false">Te damos la bienvenida a Mobility ADO</string>
+    <string name="user_login_title" translatable="false">Iniciar sesión</string>
+    <string name="user_sigin_title" translatable="false">Registrarme</string>
+
+</resources>

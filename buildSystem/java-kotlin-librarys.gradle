@@ -1,0 +1,11 @@
+apply from: "$rootProject.projectDir/buildSystem/library-version.gradle"
+ext {
+
+    javaLibrarys      = [
+           javaxInject            :"javax.inject:javax.inject:$versions.javaxInject",
+           squeareupOkHttp        :"com.squareup.okhttp3:okhttp:$versions.squeareupOkHttp",
+           squeareupInterceptor   :"com.squareup.okhttp3:logging-interceptor:$versions.squeareupInterceptor",
+           kaptGlide              :"com.github.bumptech.glide:compiler:$versions.kaptGlide"
+    ]
+
+}

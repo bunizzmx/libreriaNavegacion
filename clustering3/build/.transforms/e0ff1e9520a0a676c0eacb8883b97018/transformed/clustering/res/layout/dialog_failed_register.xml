@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:background="@drawable/shape_dialogs"
+    android:layout_marginTop="72dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="72dp">
+
+  <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/imgage_ovalerror"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:src="@drawable/ic_oval_failed_register"
+      android:layout_marginTop="60dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+  </androidx.appcompat.widget.AppCompatImageView>
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-8dp"
+        android:fontFamily="@font/gotham_pro_regular"
+        android:gravity="center"
+        android:text="¡LO SENTIMOS!"
+        android:textAlignment="center"
+        android:textColor="@color/color_text_login"
+        android:textSize="24sp"
+
+        app:layout_constraintEnd_toEndOf="@+id/imgage_ovalerror"
+        app:layout_constraintStart_toStartOf="@+id/imgage_ovalerror"
+        app:layout_constraintTop_toBottomOf="@+id/imgage_ovalerror" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/gotham_pro_regular"
+        android:gravity="center"
+        android:text="Parece que el código ingresado es incorrecto"
+        android:textAlignment="center"
+        android:textColor="@color/color_text_login"
+        android:textSize="20sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="71dp"
+        android:background="@drawable/selector_button_login_purple"
+        android:fontFamily="@font/gotham_pro_regular"
+        android:text="@string/text_back"
+        android:textColor="@color/basic_white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
