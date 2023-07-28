@@ -5,8 +5,11 @@ plugins {
 
 }
 apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: "maven-publish"
 apply from: rootProject.file("buildSystem/androidLibrary.gradle")
 def androidBase = ext.androidBase
+apply from: rootProject.file("buildSystem/java-kotlin-librarys.gradle")
+def javaLibrarys = ext.javaLibrarys
 
 android {
     namespace 'com.example.librarynavigation'
@@ -54,9 +57,10 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
-    implementation project (path:':clustering2', configuration: 'default')
-    implementation project (path:':clustering3', configuration: 'default')
-    implementation project (path:':clustering', configuration: 'default')
+    implementation  "com.mobility.ado.dev:loginHome-aar:1.0.0"
+    implementation  "com.mobility.ado.dev:loginemail-aar:1.0.0"
+    implementation  "com.mobility.ado.dev:loginPass-aar:1.0.0"
+
     implementation androidBase.androidxCore
     implementation androidBase.androidxAppCompat
     implementation materialBase.androidMaterial
@@ -83,12 +87,64 @@ dependencies {
     //Navigation
     implementation androidBase.androidxNavigationFragment
     implementation androidBase.androidxNavigationDynamic
-    
+
 
     //Glide
     implementation androidOptional.glide
     implementation androidOptional.glideOkHttp
     kapt kaptLibrarys.databindingKapt
 
+    implementation javaLibrarys.squeareupInterceptor
+
+    implementation androidOptional.gsonCode
+    implementation androidOptional.retrofitConverter
+    implementation androidOptional.retrofitConverter
+
+    implementation androidOptional.coroutineRetrofit
+
+}
+
+ext.pomfileManualGenerator = {
+    def root = asNode()
+    def dependenciesNode = root.appendNode('dependencies')
+    configurations.implementation.allDependencies
+            .findAll {
+                it.name != null && it.name != 'unspecified' && it.version != 'unspecified'
+            }.each {
+        def dependencyNode = dependenciesNode.appendNode('dependency')
+        dependencyNode.appendNode('groupId', it.group)
+        dependencyNode.appendNode('artifactId', it.name)
+        dependencyNode.appendNode('version', it.version)
+        dependencyNode.appendNode('scope', 'compile')
+        if (it.properties.excludeRules?.size() > 0) {
+            def exclusionsNode = dependencyNode.appendNode('exclusions')
+            it.properties.excludeRules.each { exclusion ->
+                def exclusionNode = exclusionsNode.appendNode('exclusion')
+                exclusion.group != null && exclusionNode.appendNode('groupId', exclusion.group)
+                exclusionNode.appendNode('artifactId', exclusion.module != null ? exclusion.module : '*')
+            }
+        }
+    }
+    root.children().last()
+}
+project(':libraryNavigation'){
+    version = "1.0.0"
+    group = 'com.mobility.ado.library'
+    artifactoryPublish.dependsOn('build')
+    publishing{
+        publications {
+            gms(MavenPublication) {
+                groupId = group
+                artifactId = "${project.getName()}-gms"
+                version = version
+                artifact("$buildDir/outputs/aar/${project.getName()}-${version}-gmsRelease.aar")
+                pom.withXml pomfileManualGenerator
+            }
+        }
+    }
+
+    artifactoryPublish {
+        publications(publishing.publications.gms)
+    }
 
 }

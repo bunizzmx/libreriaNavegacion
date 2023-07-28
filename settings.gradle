@@ -1,6 +1,3 @@
 rootProject.name = "modulonav"
 include ':app'
-include ':clustering'
-include ':clustering2'
-include ':clustering3'
 include ':libraryNavigation'
