@@ -15,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class MainActivityFlow : AppCompatActivity(),Communicator {
+class MainActivityFlow : AppCompatActivity(), com.example.common.common.Communicator {
     private lateinit var binding: ActivityMainSdkBinding
     private lateinit var navController: NavController
     private lateinit var activity: MainActivityFlow
@@ -28,13 +28,13 @@ class MainActivityFlow : AppCompatActivity(),Communicator {
         binding = ActivityMainSdkBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if (savedInstanceState == null) {
+      /*  if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.main_fragment, LoginFrontUrbanoFragment()) //
                 .commit()
-        }
+        }*/
 
-      // Navigation.findNavController(this,R.id.main_fragment).navigate(R.id.loginFrontUrbanoFragment)
+       Navigation.findNavController(this,R.id.main_fragment).navigate(R.id.loginFrontUrbanoFragment)
 
 
         val signup = intent.getStringExtra("ScreenMain")

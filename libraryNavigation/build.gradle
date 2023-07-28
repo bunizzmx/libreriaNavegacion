@@ -78,4 +78,17 @@ dependencies {
     kapt kaptLibrarys.hiltKapt
     implementation androidOptional.navigationHilt
 
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+
+    //Navigation
+    implementation androidBase.androidxNavigationFragment
+    implementation androidBase.androidxNavigationDynamic
+    
+
+    //Glide
+    implementation androidOptional.glide
+    implementation androidOptional.glideOkHttp
+    kapt kaptLibrarys.databindingKapt
+
+
 }

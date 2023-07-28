@@ -5,7 +5,7 @@ import com.example.librarynavigation.common.LanguageUtils
 import dagger.hilt.android.HiltAndroidApp
 
 
-
+@HiltAndroidApp
 class AppModuleLogin : Application() {
     override fun onCreate() {
         LanguageUtils.setLocale(applicationContext)
