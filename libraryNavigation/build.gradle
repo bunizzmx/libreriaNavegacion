@@ -57,9 +57,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
-    implementation  "com.mobility.ado.dev:loginHome-aar:1.0.0"
-    implementation  "com.mobility.ado.dev:loginemail-aar:1.0.0"
-    implementation  "com.mobility.ado.dev:loginPass-aar:1.0.0"
+    implementation  "com.mobility.ado.dev:loginHome:1.0.4"
+    implementation  "com.mobility.ado.dev:loginEmail:1.0.6"
+    implementation  "com.mobility.ado.dev:loginPass:1.0.8"
 
     implementation androidBase.androidxCore
     implementation androidBase.androidxAppCompat

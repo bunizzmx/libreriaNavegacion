@@ -5,21 +5,21 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.activity.addCallback
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import com.example.featureloginhome.ui.ui.LoginFrontUrbanoFragment
+import com.example.common.common.Communicator
+import com.example.common.common.ImageButtonEventDispatcher
+import com.example.common.common.NavigationManager
 import com.example.librarynavigation.databinding.ActivityMainSdkBinding
-import com.example.librarynavigation.utils.Communicator
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class MainActivityFlow : AppCompatActivity(), com.example.common.common.Communicator, com.example.common.common.NavigationManager {
+class MainActivityFlow : AppCompatActivity(), Communicator, NavigationManager {
     private lateinit var binding: ActivityMainSdkBinding
     private lateinit var navController: NavController
     private lateinit var activity: MainActivityFlow
@@ -50,11 +50,11 @@ class MainActivityFlow : AppCompatActivity(), com.example.common.common.Communic
         activity = this
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
-        binding.imageButton.setOnClickListener { backfragment() }
-    }
+        binding.imageButton.setOnClickListener {
+            Log.e("Me presionan", "***")
+            ImageButtonEventDispatcher.notifyImageButtonClicked()
+        }
 
-    override fun backfragment() {
-      /*Noting*/
     }
 
     override fun changeFragment(titleLabel: String, visibility: Boolean) {
