@@ -14,6 +14,8 @@ import androidx.navigation.fragment.NavHostFragment
 import com.example.common.common.Communicator
 import com.example.common.common.ImageButtonEventDispatcher
 import com.example.common.common.NavigationManager
+import com.example.featureloginhome.ui.ui.LoginFrontUrbanoFragment
+import com.example.featureloginscreen.ui.LoginFragment
 import com.example.librarynavigation.databinding.ActivityMainSdkBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -25,7 +27,9 @@ class MainActivityFlow : AppCompatActivity(), Communicator, NavigationManager {
     private lateinit var activity: MainActivityFlow
     private val mainActivityViewModel: MainActivityViewmModel by viewModels()
 
-
+    private val navigationController by lazy {
+        AppNavigationController(this)
+    }
     @SuppressLint("MissingSuperCall")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,19 +43,14 @@ class MainActivityFlow : AppCompatActivity(), Communicator, NavigationManager {
             .navigate(R.id.loginFrontUrbanoFragment)
 
 
-        val signup = intent.getStringExtra("ScreenMain")
         val register = intent.getStringExtra("ScreenRegister")
-        if (register.equals("ScreenRegister")) {
-            //  val action = MainActivityDirections.actionToFragment()
-            //     navController.navigate(action)
-        } else if (signup.equals("ScreenMain")) {
+        if (register.equals("ScreenRegister")) navigationController.navigateOfConfirmPass()
 
-        }
+
         activity = this
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         binding.imageButton.setOnClickListener {
-            Log.e("Me presionan", "***")
             ImageButtonEventDispatcher.notifyImageButtonClicked()
         }
 
@@ -81,24 +80,29 @@ class MainActivityFlow : AppCompatActivity(), Communicator, NavigationManager {
     override fun navigationManager(value: String) {
         when (value) {
             "LoginPass" -> {
-                findNavController(R.id.main_fragment).navigate(
-                    R.id.loginFragment
-                )
+                try {
+                    navigationController.navigateOfLoginPass()
+                } catch (e: Exception) {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.main_fragment, LoginFragment())
+                        .commit()
+                }
             }
 
             "LoginEmail" -> {
-                findNavController(R.id.main_fragment).navigate(
-                    R.id.loginFrontUrbanoFragment
-                )
+                navigationController.navigateOfLoginEmail()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.main_fragment, LoginFrontUrbanoFragment())
+                    .commit()
             }
 
-            "LoginHome" -> {
-                activity.setResult(100)
-                val output = Intent()
-                output.putExtra("back", "back")
-                activity.setResult(RESULT_OK, output)
-                activity.finish()
-            }
+            "LoginHome" -> navigationController.cancelNavigation()
+            "WebView" -> navigationController.navigateOfWebView()
+            "Signup" -> navigationController.navigateOfSignup()
+            "CreatePass" -> navigationController.navigateOfConfirmPass()
+            "ConfirmToken" -> navigationController.navigateOfConfirmToken()
+            "LoginRecoverPass" -> navigationController.navigateOfPassRecover()
+            "PassRecoverInstructions" -> navigationController.navigateOfIndicationsRecover()
             else -> {
             }
         }

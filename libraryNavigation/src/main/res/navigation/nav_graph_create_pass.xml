@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_create_pass"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/registerPasswordFragment">
+
+    <fragment
+        android:id="@+id/registerPasswordFragment"
+        android:name="com.example.featurecreatepass.ui.RegisterPasswordFragment"
+        android:label="RegisterPasswordFragment"
+        tools:layout="@layout/fragment_register_password">
+        <action
+            android:id="@+id/go_to_confimr_token"
+            app:destination="@id/nav_graph_confirm_token" />
+    </fragment>
+    <include app:graph="@navigation/nav_graph_confirm_token" />
+</navigation>

@@ -36,4 +36,53 @@
     <string name="user_login_title" translatable="false">Iniciar sesión</string>
     <string name="user_sigin_title" translatable="false">Registrarme</string>
 
+
+    <string name="txt_recover_pass1">Ingresa el correo electrónico con el que te registraste en el nuevo sitio y revisa las instrucciones que te enviaremos</string>
+    <string name="enter_mail">Ingresa tu correo*</string>
+    <string name="email_txt">Correo electrónico</string>
+    <string name="txt_recover_pass2">RECUPERAR CONTRASEÑA</string>
+    <string name="txt_recover_passHeader">Recuperar contraseña</string>
+    <string name="password_recovery_error_msg">Detectamos una falla. Por favor, intenta recuperar la contraseña más tarde.</string>
+    <string name="password_recovery_error_msg_not_existing_email">El correo electrónico no existe en el registro. Intenta con uno más.</string>
+
+
+    <string name="txt_recover_pass3">Enviamos instrucciones al correo proporcionado.</string>
+    <string name="txt_recover_pass4">Revisa tu correo para continuar con el proceso de recuperación de contraseña.</string>
+    <string name="txt_recover_resend">VOLVER A ENVIAR CORREO</string>
+
+    <string name="txt_verification_mode">Verifica tu dirección de correo electrónico. Te enviamos un correo a </string>
+    <string name="txt_verification_mode2">con un código de 6 digitos que vencera en 15 min. </string>
+    <string name="txt_remail">¿No recibiste el correo? Reenviar correo</string>
+    <string name="resendMail_words">Reenviar correo</string>
+    <string name="txt_codeError">Parece que el código ingresado es incorrecto</string>
+    <string name="txt_last_steps">¡Un último paso para mantener tu cuenta segura!</string>
+    <string name="txt_codeV">Código de verificación</string>
+    <string name="txt_verification">Verifica tu dirección de correo electrónico. Te enviamos un correo a jimena.vinat@gmail.com con un código de 6 digitos que vencera en 15 min.</string>
+    <string name="txt_remail2">Revisa la carpeta de correo no deseado.</string>
+    <string name="txt_verificationButton">VERIFICAR AHORA</string>
+
+    <string name="title_create_password" translatable="false">Crea una contraseña</string>
+    <string name="text_validate_password" translatable="false">La contraseña se compone de 8 caracteres o más y debe contener una letra mayúscula, una letra minúscula y un número</string>
+    <string name="txt_characters1">Mayúsculas</string>
+    <string name="txt_characters2">Minúsculas</string>
+    <string name="txt_characters3">Números</string>
+    <string name="txt_characters4">Caracteres</string>
+    <string name="record_email_sesion" translatable="false">Usa este correo para iniciar sesión</string>
+    <string name="email_demo" translatable="false">jimena.vinat@gmail.com</string>
+    <string name="text_button_create_pass" translatable="false">CREAR CONTRASEÑA</string>
+
+    <string name="txt_register">¿Tienes cuenta Mobility ADO?</string>
+    <string name="txt_mail">Usa el mismo correo electrónico para facilitar el inicio de sesión</string>
+    <string name="label_name">Nombre (s)*</string>
+    <string name="hint_name">Nombre (s)</string>
+    <string name="txt_validationName">Ingresa un nombre válido</string>
+    <string name="label_lastname">Apellido (s)*</string>
+    <string name="hint_lastname">Apellido (s)</string>
+    <string name="txt_validationLastname">Ingresa un apellido válido</string>
+    <string name="promo_login">Deseo recibir promociones exclusivas para viajar .</string>
+    <string name="terms_login">Estoy de acuerdo con los Términos y Condiciones así como el Aviso de Privacidad.</string>
+    <string name="terms_words">Términos y Condiciones</string>
+    <string name="privacy_words">Aviso de Privacidad</string>
+    <string name="txt_OTP_max">¡Uy! Agotaste las oportunidades, espera 30 minutos y solicita un nuevo código.</string>
+
 </resources>
