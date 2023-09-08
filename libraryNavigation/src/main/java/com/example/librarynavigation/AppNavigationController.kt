@@ -17,20 +17,20 @@ class AppNavigationController(private val activity: Activity) {
     }
 
     fun navigateOfLoginPass() {
-        navController.navigate(com.example.featureloginscreen.R.id.loginFragment)
+        navController.navigate(com.example.resources.R.id.loginFragment)
     }
 
 
     fun navigateOfLoginEmail() {
-        navController.navigate(com.example.featureloginhome.R.id.loginFrontUrbanoFragment)
+        navController.navigate(com.example.resources.R.id.loginFrontUrbanoFragment)
     }
 
     fun navigateOfPassRecover() {
-        navController.navigate(com.example.featureloginpass.R.id.loginPasswordFragment)
+        navController.navigate(com.example.resources.R.id.loginPasswordFragment)
     }
 
     fun navigateOfIndicationsRecover() {
-        navController.navigate(com.example.featureforgotpass.R.id.recoverPassFragment)
+        navController.navigate(com.example.resources.R.id.recoverPassFragment)
     }
     fun navigateOfLoginHome() {
         activity.setResult(100)
@@ -48,19 +48,19 @@ class AppNavigationController(private val activity: Activity) {
     }
 
     fun navigateOfWebView() {
-        navController.navigate(com.example.featuresigup.R.id.singUpFragment)
+        navController.navigate(com.example.resources.R.id.singUpFragment)
     }
 
     fun navigateOfSignup() {
-        navController.navigate(com.example.featureloginhome.R.id.loginFrontUrbanoFragment)
+        navController.navigate(com.example.resources.R.id.loginFrontUrbanoFragment)
     }
 
     fun navigateOfConfirmPass() {
-        navController.navigate(com.example.featuresigup.R.id.singUpFragment)
+        navController.navigate(com.example.resources.R.id.singUpFragment)
     }
 
     fun navigateOfConfirmToken() {
-        navController.navigate(com.example.featurecreatepass.R.id.registerPasswordFragment)
+        navController.navigate(com.example.resources.R.id.registerPasswordFragment)
     }
 }
 

@@ -51,6 +51,10 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 
@@ -59,17 +63,24 @@ dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
 
     //Librerias Login
-    implementation  'com.mobility.ado.qa:Login-PassScreen:1.0.4'
-    implementation  'com.mobility.ado.qa:Login-EmailScreen:1.0.0'
-    implementation  'com.mobility.ado.qa:Login-HomeScreen:1.0.0'
-    implementation  'com.mobility.ado.qa:Login-InstructionsPass:1.0.0'
-    implementation  'com.mobility.ado.qa:Login-ForgotPass:1.0.0'
+    implementation  'com.mobility.ado.qa:Login-PassLogin:1.1.1.0'
+    implementation  'com.mobility.ado.qa:Login-LoginScreen:1.1.1.0'
+    implementation  'com.mobility.ado.qa:Login-LoginHome:1.1.1.2'
+    implementation  'com.mobility.ado.qa:Login-InstructionsPass:1.1.1.0'
+    implementation  'com.mobility.ado.qa:Login-ForgotPass:1.1.1.0'
 
     //Librerias Registro
-    implementation  'com.mobility.ado.qa:Register-ConfirmToken:1.0.0'
-    implementation  'com.mobility.ado.qa:Register-CreatePass:1.0.0'
-    implementation  'com.mobility.ado.qa:Register-Singup:1.0.0'
-    implementation  'com.mobility.ado.qa:Register-WebView:1.0.0'
+    implementation  'com.mobility.ado.qa:Register-ConfirmToken:1.1.1.0'
+    implementation  'com.mobility.ado.qa:Register-CreatePass:1.1.1.0'
+    implementation  'com.mobility.ado.qa:Register-Singup:1.1.1.0'
+    implementation  'com.mobility.ado.qa:Register-WebView:1.1.1.0'
+
+    //Librerias Recursos
+    implementation  'com.mobility.ado.qa:ResourcesData:1.1.1.0'
+
+
+
+
 
     implementation androidBase.androidxCore
     implementation androidBase.androidxAppCompat

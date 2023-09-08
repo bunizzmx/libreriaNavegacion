@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Toolbar.TextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">18dp</item>
+        <item name="fontFamily">@font/gotha_pro_reg</item>
+    </style>
+</resources>

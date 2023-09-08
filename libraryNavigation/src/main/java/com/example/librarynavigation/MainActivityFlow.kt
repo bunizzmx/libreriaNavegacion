@@ -1,31 +1,23 @@
 package com.example.librarynavigation
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import com.example.common.common.Communicator
 import com.example.common.common.ImageButtonEventDispatcher
 import com.example.common.common.NavigationManager
-import com.example.featureloginhome.ui.ui.LoginFrontUrbanoFragment
+import com.example.featureloginhome.ui.uii.LoginFrontUrbanoFragment
 import com.example.featureloginscreen.ui.LoginFragment
 import com.example.librarynavigation.databinding.ActivityMainSdkBinding
+import com.example.resourcesdata.PreferenceManager
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
 class MainActivityFlow : AppCompatActivity(), Communicator, NavigationManager {
     private lateinit var binding: ActivityMainSdkBinding
-    private lateinit var navController: NavController
     private lateinit var activity: MainActivityFlow
-    private val mainActivityViewModel: MainActivityViewmModel by viewModels()
 
     private val navigationController by lazy {
         AppNavigationController(this)
@@ -33,18 +25,23 @@ class MainActivityFlow : AppCompatActivity(), Communicator, NavigationManager {
     @SuppressLint("MissingSuperCall")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val preferenceManager = PreferenceManager(this)
+
         binding = ActivityMainSdkBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.main_fragment) as NavHostFragment
-        navController = navHostFragment.navController
 
-        Navigation.findNavController(this, R.id.main_fragment)
-            .navigate(R.id.loginFrontUrbanoFragment)
+        if (savedInstanceState == null) {
+            val appKey = intent.getIntExtra("appKey", 0)
+            preferenceManager.saveInt(PreferenceManager.ID_COMPANY, appKey) // Para pruebas controlaremos el idCompany de manera manual
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.main_fragment, LoginFrontUrbanoFragment())
+                .commit()
+        }
+        val idCompany = preferenceManager.getInt(PreferenceManager.ID_COMPANY,0)
+        binding.appId = idCompany
 
 
-        val register = intent.getStringExtra("ScreenRegister")
-        if (register.equals("ScreenRegister")) navigationController.navigateOfConfirmPass()
+        navigationController.navigateOfLoginEmail()
 
 
         activity = this

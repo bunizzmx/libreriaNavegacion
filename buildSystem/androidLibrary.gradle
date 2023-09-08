@@ -22,7 +22,9 @@ ext {
             glide                       : "com.github.bumptech.glide:glide:$versions.glide",
             glideOkHttp                 : "com.github.bumptech.glide:okhttp3-integration:$versions.glideOkHttp",
             lifecycleLibraryCore        : "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycleLibraryCore",
-            coroutineRetrofit           : "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$versions.coroutineRetrofit"
+            coroutineRetrofit           : "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$versions.coroutineRetrofit",
+            reactivex                   : "io.reactivex.rxjava2:rxjava:$versions.reactivex",
+            reactivexAndroid            : "io.reactivex.rxjava2:rxandroid:$versions.reactivexAndroid"
     ]
 
     materialBase = [
@@ -41,6 +43,16 @@ ext {
     kaptLibrarys = [
             databindingKapt             : "com.android.databinding:compiler:$versions.databindingKapt",
             hiltKapt                    : "com.google.dagger:hilt-compiler:$versions.hiltKapt"
+    ]
+
+    externalLibrarys = [
+            sspDimensv0                 : "com.intuit.sdp:sdp-android:$versions.sspDimensv0",
+            sspDimensv6                 : "com.intuit.ssp:ssp-android:$versions.sspDimensv6",
+            confirmPass                 : "com.github.fraggjkee:sms-confirmation-view:$versions.confirmPass"
+    ]
+
+    kotlinLibs = [
+            stdlib                      : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.0"
     ]
 
 

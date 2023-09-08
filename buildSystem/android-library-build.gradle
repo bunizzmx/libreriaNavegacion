@@ -31,20 +31,12 @@ android {
         }
     }
 
-    flavorDimensions "default"
-    productFlavors {
-        dev {
-            buildConfigField "String", "OMNICANAL_API_URL", "\"https://apidev.ecommerce.mobilityado.com/\""
-            buildConfigField "String", "AUTHORIZATION", "\"Basic ZDVjM2VjMTJhZTMwNDg0MDhiN2E4OGY5NDRhMTg2Zjc6NGFhMTY3NjMtOTMwOC00NDE3LWJhYjYtOTcyNWFmOGJiNDgx\""
-        }
-        pre {
-            buildConfigField "String", "OMNICANAL_API_URL", "\"https://apiqa.ecommerce.mobilityado.com/\""
-            buildConfigField "String", "AUTHORIZATION", "\"Basic NjhmMjMwOTdiOWZjNDJiNzgxZGQ2NDQ5OWE0YTYwOWM6NDY2MTkyMDEtMmY5Yi00NDRhLWEwM2EtOGUxZGNiMjI1MzBh\""
-        }
-        pro {
-            buildConfigField "String", "OMNICANAL_API_URL", "\"https://api.ecommerce.mobilityado.com/\""
-            buildConfigField "String", "AUTHORIZATION", "\"Basic YTY4N2Q5NjMyNjdkNDMzYThlMjY5ZGMzMWVkYzgwOGU6YzMxZGMwMWEtY2M1NS00MDJkLWJiMjctYjMzNWEzNTAxY2Iz\""
-        }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 
     buildFeatures {

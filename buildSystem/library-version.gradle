@@ -30,6 +30,12 @@ ext {
              androidxNavigationDynamic    : "2.5.2",
              lifecycleLibrary             : "2.6.1",
              lifecycleLibraryCore         : "2.6.1",
-             coroutineRetrofit            : "0.9.2"
+             coroutineRetrofit            : "0.9.2",
+             sspDimensv0                  : "1.0.0",
+             sspDimensv6                  : "1.0.6",
+             confirmPass                  : "1.7.1",
+             reactivex                    : "2.2.16",
+             reactivexAndroid             : "2.1.1"
+
      ]
 }

@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
 
         // Registrar el launcher en el objeto NavigationExpose
         NavigationExpose.registerActivityResultLauncher(activityResultLauncher)
-
-        NavigationExpose.initModule(this)
+        NavigationExpose.initModule(this, 1)
     }
 }

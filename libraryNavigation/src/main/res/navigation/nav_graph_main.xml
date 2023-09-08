@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main" >
+    <include app:graph="@navigation/nav_graph_confirm_token" />
+    <include app:graph="@navigation/nav_graph_create_pass" />
+    <include app:graph="@navigation/nav_graph_login" />
+    <include app:graph="@navigation/nav_graph_pass" />
+    <include app:graph="@navigation/nav_graph_signup" />
+    <include app:graph="@navigation/nav_graph_webview" />
+    <include app:graph="@navigation/nav_login_home" />
+    <include app:graph="@navigation/nav_graph_forgot_pass" />
+    <include app:graph="@navigation/nav_graph_instructions" />
+</navigation>
