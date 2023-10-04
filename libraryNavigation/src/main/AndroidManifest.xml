@@ -11,7 +11,8 @@
         <activity
             android:name=".MainActivityFlow"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Design.NoActionBar">
         </activity>
 
     </application>

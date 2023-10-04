@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.util.Log
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -31,6 +30,6 @@ class MainActivity : AppCompatActivity() {
 
         // Registrar el launcher en el objeto NavigationExpose
         NavigationExpose.registerActivityResultLauncher(activityResultLauncher)
-        NavigationExpose.initModule(this, 1)
+        NavigationExpose.initModule(this, 5)
     }
 }

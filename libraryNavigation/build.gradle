@@ -16,7 +16,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        minSdk 24
+        minSdk 23
         targetSdk 33
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -55,6 +55,10 @@ android {
     dataBinding {
         enabled = true
     }
+
+    packagingOptions {
+        pickFirst 'com/example/data/ServerResponse.class'
+    }
 }
 
 
@@ -63,23 +67,22 @@ dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
 
     //Librerias Login
-    implementation  'com.mobility.ado.qa:Login-PassLogin:1.1.1.0'
-    implementation  'com.mobility.ado.qa:Login-LoginScreen:1.1.1.0'
-    implementation  'com.mobility.ado.qa:Login-LoginHome:1.1.1.2'
-    implementation  'com.mobility.ado.qa:Login-InstructionsPass:1.1.1.0'
-    implementation  'com.mobility.ado.qa:Login-ForgotPass:1.1.1.0'
+    implementation  'com.mobility.ado.qa:Login-PassLogin:1.1.10.0'
+    implementation  'com.mobility.ado.qa:Login-LoginScreen:1.1.10.0'
+    implementation  'com.mobility.ado.qa:Login-LoginHome:1.1.10.0'
+    implementation  'com.mobility.ado.qa:Login-InstructionsPass:1.1.10.0'
+    implementation  'com.mobility.ado.qa:Login-ForgotPass:1.1.10.0'
 
     //Librerias Registro
-    implementation  'com.mobility.ado.qa:Register-ConfirmToken:1.1.1.0'
-    implementation  'com.mobility.ado.qa:Register-CreatePass:1.1.1.0'
-    implementation  'com.mobility.ado.qa:Register-Singup:1.1.1.0'
-    implementation  'com.mobility.ado.qa:Register-WebView:1.1.1.0'
+    implementation  'com.mobility.ado.qa:Register-ConfirmToken:1.1.10.0'
+    implementation  'com.mobility.ado.qa:Register-CreatePass:1.1.10.0'
+    implementation  'com.mobility.ado.qa:Register-Singup:1.1.10.0'
+    implementation  'com.mobility.ado.qa:Register-WebView:1.1.10.0'
 
     //Librerias Recursos
-    implementation  'com.mobility.ado.qa:ResourcesData:1.1.1.0'
+    implementation  'com.mobility.ado.qa:ResourcesData:1.1.11.0'
 
-
-
+    //implementation 'com.mobility.ado:linesModule:1.0.0.3'
 
 
     implementation androidBase.androidxCore

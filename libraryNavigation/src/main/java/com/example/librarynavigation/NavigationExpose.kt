@@ -13,10 +13,12 @@ object NavigationExpose {
 
     private lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
 
+    @JvmStatic
     fun registerActivityResultLauncher(activityResultLauncher: ActivityResultLauncher<Intent>) {
         this.activityResultLauncher = activityResultLauncher
     }
 
+    @JvmStatic
     fun initModule(context: Context, app: Int) {
         val intent = Intent(context, MainActivityFlow::class.java).apply {
             putExtra("appKey", app)
