@@ -67,20 +67,20 @@ dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
 
     //Librerias Login
-    implementation  'com.mobility.ado.qa:Login-PassLogin:1.1.10.0'
-    implementation  'com.mobility.ado.qa:Login-LoginScreen:1.1.10.0'
-    implementation  'com.mobility.ado.qa:Login-LoginHome:1.1.10.0'
-    implementation  'com.mobility.ado.qa:Login-InstructionsPass:1.1.10.0'
-    implementation  'com.mobility.ado.qa:Login-ForgotPass:1.1.10.0'
+    implementation  'com.mobility.ado.qa:Login-PassLogin:1.2.9'
+    implementation  'com.mobility.ado.qa:Login-LoginScreen:1.2.9'
+    implementation  'com.mobility.ado.qa:Login-LoginHome:1.2.9'
+    implementation  'com.mobility.ado.qa:Login-InstructionsPass:1.2.9'
+    implementation  'com.mobility.ado.qa:Login-ForgotPass:1.2.9'
 
     //Librerias Registro
-    implementation  'com.mobility.ado.qa:Register-ConfirmToken:1.1.10.0'
-    implementation  'com.mobility.ado.qa:Register-CreatePass:1.1.10.0'
-    implementation  'com.mobility.ado.qa:Register-Singup:1.1.10.0'
-    implementation  'com.mobility.ado.qa:Register-WebView:1.1.10.0'
+    implementation  'com.mobility.ado.qa:Register-ConfirmToken:1.2.9'
+    implementation  'com.mobility.ado.qa:Register-CreatePass:1.2.9'
+    implementation  'com.mobility.ado.qa:Register-Singup:1.2.9'
+    implementation  'com.mobility.ado.qa:Register-WebView:1.2.9'
 
     //Librerias Recursos
-    implementation  'com.mobility.ado.qa:ResourcesData:1.1.11.0'
+    implementation  'com.mobility.ado.qa:ResourcesData:1.2.6'
 
     //implementation 'com.mobility.ado:linesModule:1.0.0.3'
 

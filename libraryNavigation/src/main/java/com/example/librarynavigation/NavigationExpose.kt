@@ -19,9 +19,10 @@ object NavigationExpose {
     }
 
     @JvmStatic
-    fun initModule(context: Context, app: Int) {
+    fun initModule(context: Context, app: Int, flow: String) {
         val intent = Intent(context, MainActivityFlow::class.java).apply {
             putExtra("appKey", app)
+            putExtra("flowType", flow)
         }
         if (context is Activity) {
             activityResultLauncher.launch(intent)
