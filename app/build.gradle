@@ -61,6 +61,6 @@ dependencies {
     implementation androidOptional.navigationHilt
 
     //Librerias Recursos
-    implementation  'com.mobility.ado.qa:ResourcesData:1.1.3.0'
+    implementation  'com.mobility.ado.pro:ResourcesData:1.0.0'
 
 }

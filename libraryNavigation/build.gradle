@@ -24,7 +24,7 @@ android {
     }
 
     android.sourceSets {
-        main.res.srcDirs = ['src/main/res',' src/main/res2']
+        main.res.srcDirs = ['src/main/res', ' src/main/res2']
     }
 
 
@@ -62,27 +62,42 @@ android {
 }
 
 
-
 dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
 
+    /* //Librerias Login
+     implementation  'com.mobility.ado.qa:Login-PassLogin:1.2.9'
+     implementation  'com.mobility.ado.qa:Login-LoginScreen:1.2.9'
+     implementation  'com.mobility.ado.qa:Login-LoginHome:1.2.9'
+     implementation  'com.mobility.ado.qa:Login-InstructionsPass:1.2.9'
+     implementation  'com.mobility.ado.qa:Login-ForgotPass:1.2.9'
+
+     //Librerias Registro
+     implementation  'com.mobility.ado.qa:Register-ConfirmToken:1.2.9'
+     implementation  'com.mobility.ado.qa:Register-CreatePass:1.2.9'
+     implementation  'com.mobility.ado.qa:Register-Singup:1.2.9'
+     implementation  'com.mobility.ado.qa:Register-WebView:1.2.9'
+
+     //Librerias Recursos
+     implementation  'com.mobility.ado.qa:ResourcesData:1.2.6'
+
+     //implementation 'com.mobility.ado:linesModule:1.0.0.3'*/
+
     //Librerias Login
-    implementation  'com.mobility.ado.qa:Login-PassLogin:1.2.9'
-    implementation  'com.mobility.ado.qa:Login-LoginScreen:1.2.9'
-    implementation  'com.mobility.ado.qa:Login-LoginHome:1.2.9'
-    implementation  'com.mobility.ado.qa:Login-InstructionsPass:1.2.9'
-    implementation  'com.mobility.ado.qa:Login-ForgotPass:1.2.9'
+    implementation 'com.mobility.ado.pro:Login-PassLogin:1.0.1'
+    implementation 'com.mobility.ado.pro:Login-LoginScreen:1.0.1'
+    implementation 'com.mobility.ado.pro:Login-LoginHome:1.0.1'
+    implementation 'com.mobility.ado.pro:Login-InstructionsPass:1.0.1'
+    implementation 'com.mobility.ado.pro:Login-ForgotPass:1.0.1'
 
-    //Librerias Registro
-    implementation  'com.mobility.ado.qa:Register-ConfirmToken:1.2.9'
-    implementation  'com.mobility.ado.qa:Register-CreatePass:1.2.9'
-    implementation  'com.mobility.ado.qa:Register-Singup:1.2.9'
-    implementation  'com.mobility.ado.qa:Register-WebView:1.2.9'
+//Librerias Registro
+    implementation 'com.mobility.ado.pro:Register-ConfirmToken:1.0.1'
+    implementation 'com.mobility.ado.pro:Register-CreatePass:1.0.1'
+    implementation 'com.mobility.ado.pro:Register-Singup:1.0.1'
+    implementation 'com.mobility.ado.pro:Register-WebView:1.0.1'
 
-    //Librerias Recursos
-    implementation  'com.mobility.ado.qa:ResourcesData:1.2.6'
-
-    //implementation 'com.mobility.ado:linesModule:1.0.0.3'
+//Librerias Recursos
+    implementation 'com.mobility.ado.pro:ResourcesData:1.0.0'
 
 
     implementation androidBase.androidxCore
@@ -101,19 +116,19 @@ dependencies {
 
     kapt kaptLibrarys.databindingKapt
 
-    //Hilt
+//Hilt
     implementation androidOptional.googleHilt
     kapt kaptLibrarys.hiltKapt
     implementation androidOptional.navigationHilt
 
     implementation 'com.squareup.okhttp3:okhttp:4.11.0'
 
-    //Navigation
+//Navigation
     implementation androidBase.androidxNavigationFragment
     implementation androidBase.androidxNavigationDynamic
 
 
-    //Glide
+//Glide
     implementation androidOptional.glide
     implementation androidOptional.glideOkHttp
     kapt kaptLibrarys.databindingKapt
@@ -151,11 +166,11 @@ ext.pomfileManualGenerator = {
     }
     root.children().last()
 }
-project(':libraryNavigation'){
+project(':libraryNavigation') {
     version = "1.0.0"
     group = 'com.mobility.ado.library'
     artifactoryPublish.dependsOn('build')
-    publishing{
+    publishing {
         publications {
             gms(MavenPublication) {
                 groupId = group
