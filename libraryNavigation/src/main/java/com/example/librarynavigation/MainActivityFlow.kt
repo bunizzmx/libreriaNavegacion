@@ -5,11 +5,13 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
 import com.example.common.common.Communicator
 import com.example.common.common.ImageButtonEventDispatcher
 import com.example.common.common.NavigationManager
 import com.example.featureloginhome.ui.uii.LoginFrontUrbanoFragment
 import com.example.featureloginscreen.ui.LoginFragment
+import com.example.featurepasslogin.ui.ui.LoginPasswordFragment
 import com.example.featuresigup.ui.SingUpFragment
 import com.example.librarynavigation.databinding.ActivityMainSdkBinding
 import com.example.resourcesdata.PreferenceManager
@@ -25,6 +27,7 @@ class MainActivityFlow : AppCompatActivity(), Communicator, NavigationManager {
     private val navigationController by lazy {
         AppNavigationController(this)
     }
+
     @SuppressLint("MissingSuperCall")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,36 +42,24 @@ class MainActivityFlow : AppCompatActivity(), Communicator, NavigationManager {
         flowTypeShowToolbar = flowType!!
 
 
-        if (appKey== 1) {
-            if (savedInstanceState == null) {
-                preferenceManager.saveInt(PreferenceManager.ID_COMPANY, appKey)
-               when (flowType) {
-                   "Login" -> {
-                       supportFragmentManager.beginTransaction()
-                           .replace(R.id.main_fragment, LoginFragment())
-                           .commit()
-                   }
-                   "Register" -> {
-                       supportFragmentManager.beginTransaction()
-                           .replace(R.id.main_fragment, SingUpFragment())
-                           .commit()
-                   }
-               }
+        if (appKey == 1) {
+            preferenceManager.saveInt(PreferenceManager.ID_COMPANY, appKey)
+            when (flowType) {
+                "Login" -> {
+                    navigationController.navigateOfLoginPass()
+                }
+
+                "Register" -> {
+                    navigationController.navigateOfWebView()
+                }
             }
-        }  else {
-            if (savedInstanceState == null) {
-                preferenceManager.saveInt(PreferenceManager.ID_COMPANY, appKey)
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.main_fragment, LoginFrontUrbanoFragment())
-                    .commit()
-            }
+        } else {
+            preferenceManager.saveInt(PreferenceManager.ID_COMPANY, appKey)
+            navigationController.navigateOfLoginEmail()
         }
 
-        val idCompany = preferenceManager.getInt(PreferenceManager.ID_COMPANY,0)
+        val idCompany = preferenceManager.getInt(PreferenceManager.ID_COMPANY, 0)
         binding.appId = idCompany
-
-
-        navigationController.navigateOfLoginEmail()
 
 
         activity = this
@@ -84,16 +75,8 @@ class MainActivityFlow : AppCompatActivity(), Communicator, NavigationManager {
         var titleNew = titleLabel
         var visibilityNew = visibility
         if (flowTypeShowToolbar == "Register") {
-            titleNew = "Regístrate"
-            visibilityNew = true
             binding.constraintProgress.visibility = View.VISIBLE
-            binding.toolbar.setTitle(titleLabel)
-            var progress: Int = (100 / 3) * 1
-            binding.contentLoadingProgressBar.progress = progress
-            binding.textProgress.text = "1/3"
         } else if (flowTypeShowToolbar == "Login") {
-            titleNew = "Iniciar sesión"
-            visibilityNew = false
             binding.constraintProgress.visibility = View.GONE
         } else {
             binding.constraintProgress.visibility = View.GONE
@@ -119,16 +102,24 @@ class MainActivityFlow : AppCompatActivity(), Communicator, NavigationManager {
 
     override fun navigationManager(value: String) {
         val preferenceManager = PreferenceManager(this)
-        val idCompany = preferenceManager.getInt(PreferenceManager.ID_COMPANY,0)
+        val idCompany = preferenceManager.getInt(PreferenceManager.ID_COMPANY, 0)
         when (value) {
             "LoginPass" -> {
                 try {
+                    Log.e("OPTION-TEST", "OP1")
                     navigationController.navigateOfLoginPass()
                 } catch (e: Exception) {
+                    Log.e("OPTION-TEST", e.toString())
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.main_fragment, LoginFragment())
                         .commit()
                 }
+            }
+
+            "GoScreenPass" -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.main_fragment, LoginPasswordFragment())
+                    .commit()
             }
 
             "LoginEmail" -> {
@@ -147,6 +138,7 @@ class MainActivityFlow : AppCompatActivity(), Communicator, NavigationManager {
                 if (idCompany == 1) navigationController.cancelNavigation()
                 else navigationController.navigateOfSignup()
             }
+
             "CreatePass" -> {
                 try {
                     navigationController.navigateOfConfirmPass()
@@ -156,6 +148,7 @@ class MainActivityFlow : AppCompatActivity(), Communicator, NavigationManager {
                         .commit()
                 }
             }
+
             "ConfirmToken" -> navigationController.navigateOfConfirmToken()
             "LoginRecoverPass" -> navigationController.navigateOfPassRecover()
             "PassRecoverInstructions" -> navigationController.navigateOfIndicationsRecover()

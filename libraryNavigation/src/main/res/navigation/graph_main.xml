@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph_main"
+    app:startDestination="@id/loginFrontUrbanoFragment">
+
+    <fragment
+        android:id="@+id/loginFrontUrbanoFragment"
+        android:name="com.example.featureloginhome.ui.uii.LoginFrontUrbanoFragment"
+        android:label="fragment_login_front_urbano"
+        tools:layout="@layout/fragment_login_front_urbano" >
+
+        <action
+            android:id="@+id/go_to_loginMail"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/go_to_signup"
+            app:destination="@id/singUpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.featureloginscreen.ui.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/go_to_pass"
+            app:destination="@id/loginPasswordFragment" />
+
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <action
+            android:id="@+id/go_to_signup"
+            app:destination="@id/singUpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/singUpFragment"
+        android:name="com.example.featuresigup.ui.SingUpFragment"
+        android:label="SingUpFragment"
+        tools:layout="@layout/fragment_sing_up">
+        <action
+            android:id="@+id/go_to_webview"
+            app:destination="@id/webViewFragment" />
+        <action
+            android:id="@+id/go_to_create_pass"
+            app:destination="@id/registerPasswordFragment" />
+        <action
+            android:id="@+id/go_to_login_pass"
+            app:destination="@id/loginPasswordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginPasswordFragment"
+        android:name="com.example.featurepasslogin.ui.ui.LoginPasswordFragment"
+        android:label="fragment_login_password"
+        tools:layout="@layout/fragment_login_password" >
+        <action
+            android:id="@+id/go_to_forgot_pass"
+            app:destination="@id/recoverPassFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recoverPassFragment"
+        android:name="com.example.featureforgotpass.ui.RecoverPassFragment"
+        android:label="fragment_recover_pass"
+        tools:layout="@layout/fragment_recover_pass" >
+        <action
+            android:id="@+id/go_to_instructions"
+            app:destination="@id/recoverPassIndicationsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recoverPassIndicationsFragment"
+        android:name="com.example.featureinstructionspass.ui.RecoverPassIndicationsFragment"
+        android:label="fragment_recover_pass_indications"
+        tools:layout="@layout/fragment_recover_pass_indications" />
+
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.example.featurewebview.ui.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="https://mobilityado.com/webview" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerPasswordFragment"
+        android:name="com.example.featurecreatepass.ui.RegisterPasswordFragment"
+        android:label="RegisterPasswordFragment"
+        tools:layout="@layout/fragment_register_password">
+        <action
+            android:id="@+id/go_to_confimr_token"
+            app:destination="@id/confirmTokenFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/confirmTokenFragment"
+        android:name="com.example.featureconfirmtoken.ui.ConfirmTokenFragment"
+        android:label="ConfirmTokenFragment"
+        tools:layout="@layout/fragment_confirm_token"/>
+</navigation>
